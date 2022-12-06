@@ -15,7 +15,7 @@ namespace CSharpLaba2
         [STAThread]
         static void Main()
         {
-            using (DbContext database = new DbContext())
+            using (GradeDataContext database = new GradeDataContext())
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
