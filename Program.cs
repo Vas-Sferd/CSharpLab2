@@ -15,11 +15,11 @@ namespace CSharpLaba2
         [STAThread]
         static void Main()
         {
-            using (Model1 database = new Model1())
+            using (DbContext database = new DbContext())
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Form1(database));
+                Application.Run(new MainForm(database));
             }
         }
     }
