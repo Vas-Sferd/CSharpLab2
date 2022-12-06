@@ -19,15 +19,16 @@ namespace CSharpLaba2
         {
             this.database = database;
             InitializeComponent();
+            LoginTextBox.Text = "" + LoginTextBox.PasswordChar;
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
             var passwords = from data in database.Users
-                where data.Login == LoginText.Text
+                where data.Login == LoginTextBox.Text
                 select data.Password;
 
-            if (passwords.Any(p => p == PasswordText.Text))
+            if (passwords.Any(p => p == PasswordTextBox.Text))
             {
                 MessageBox.Show("Вы вошли");
             }
@@ -39,14 +40,34 @@ namespace CSharpLaba2
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
-            if (LoginText.Text != "" && PasswordText.Text != "")
+            if (LoginTextBox.Text != "" && PasswordTextBox.Text != "")
             {
-                database.Users.Add(new User(LoginText.Text, PasswordText.Text));
+                database.Users.Add(new User(LoginTextBox.Text, PasswordTextBox.Text));
                 database.SaveChanges();
             }
             else 
             {
                 MessageBox.Show("Вы не ввели логин или пароль");
+            }
+        }
+
+        private void ShowPasswordCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                CheckBox checkBox = (CheckBox)sender;
+                if (checkBox.Checked)
+                {
+                    PasswordTextBox.PasswordChar = '\0';
+                }
+                else
+                {
+                    PasswordTextBox.PasswordChar = '*';
+                }
+            }
+            catch
+            {
+
             }
         }
     }
