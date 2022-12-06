@@ -21,11 +21,10 @@ namespace CSharpLaba2
             InitializeComponent();
         }
 
-        private void OpenDataForm(string username)
+        private void OpenDataForm(string login)
         {
-            MessageBox.Show("Вы вошли"); // Todo: delete this
-
-
+            DataForm dataForm = new DataForm(database, login);
+            dataForm.Show();
         }
 
         private void LoginButton_Click(object sender, EventArgs e)
