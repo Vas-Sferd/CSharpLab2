@@ -30,7 +30,7 @@ namespace CSharpLaba2
         private void LoginButton_Click(object sender, EventArgs e)
         {
             // Todo: delete this strings
-            OpenDataForm("");
+            OpenDataForm("Olga2003");
             return;
             // **/
 

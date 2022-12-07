@@ -45,6 +45,7 @@
             this.GradesGrid.Location = new System.Drawing.Point(12, 12);
             this.GradesGrid.Name = "GradesGrid";
             this.GradesGrid.ReadOnly = true;
+            this.GradesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GradesGrid.Size = new System.Drawing.Size(505, 380);
             this.GradesGrid.TabIndex = 0;
             // 
@@ -56,6 +57,7 @@
             this.AddButton.TabIndex = 1;
             this.AddButton.Text = "Добавить";
             this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // DeleteButton
             // 
@@ -65,6 +67,7 @@
             this.DeleteButton.TabIndex = 2;
             this.DeleteButton.Text = "Удалить";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // ChangeButton
             // 
@@ -74,6 +77,7 @@
             this.ChangeButton.TabIndex = 3;
             this.ChangeButton.Text = "Редактировать";
             this.ChangeButton.UseVisualStyleBackColor = true;
+            this.ChangeButton.Click += new System.EventHandler(this.ChangeButton_Click);
             // 
             // DataForm
             // 

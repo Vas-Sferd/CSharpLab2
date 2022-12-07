@@ -18,3 +18,4 @@ C:\Users\Master\source\repos\CSharpLab2\obj\Debug\CSharpLaba2.exe
 C:\Users\Master\source\repos\CSharpLab2\obj\Debug\CSharpLaba2.pdb
 C:\Users\Master\source\repos\CSharpLab2\obj\Debug\CSharpLaba2.MainForm.resources
 C:\Users\Master\source\repos\CSharpLab2\obj\Debug\CSharpLaba2.DataForm.resources
+C:\Users\Master\source\repos\CSharpLab2\obj\Debug\CSharpLaba2.EditGradeForm.resources
