@@ -29,11 +29,6 @@ namespace CSharpLaba2
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            // Todo: delete this strings
-            OpenDataForm("Olga2003");
-            return;
-            // **/
-
             var passwords = from data in database.Users
                 where data.Login == LoginTextBox.Text
                 select data.Password;
@@ -45,7 +40,7 @@ namespace CSharpLaba2
             }
             else
             {
-                MessageBox.Show("Вас сюда не звали");
+                MessageBox.Show("Неправильный логин или пароль");
             }
         }
 
