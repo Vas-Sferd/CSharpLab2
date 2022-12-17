@@ -24,7 +24,8 @@ namespace CSharpLaba2
         private void OpenDataForm(string login)
         {
             DataForm dataForm = new DataForm(database, login);
-            dataForm.Show();
+            dataForm.Show(); 
+            dataForm.FormClosed += (object sender, FormClosedEventArgs e) => Application.Exit();
         }
 
         private void LoginButton_Click(object sender, EventArgs e)

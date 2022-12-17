@@ -125,7 +125,7 @@
             this.CancelButton.Text = "Отмена";
             this.CancelButton.UseVisualStyleBackColor = true;
             // 
-            // AddGradeForm
+            // EditGradeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -138,7 +138,8 @@
             this.Controls.Add(DateLabel);
             this.Controls.Add(SubjectLabel);
             this.Controls.Add(MarkLabel);
-            this.Name = "AddGradeForm";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "EditGradeForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.AddGradeForm_Load);
             this.ResumeLayout(false);

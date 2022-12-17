@@ -39,13 +39,21 @@
             // 
             this.GradesGrid.AllowUserToAddRows = false;
             this.GradesGrid.AllowUserToDeleteRows = false;
-            this.GradesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.GradesGrid.AllowUserToResizeColumns = false;
+            this.GradesGrid.AllowUserToResizeRows = false;
+            this.GradesGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GradesGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
-            this.GradesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GradesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.GradesGrid.Location = new System.Drawing.Point(12, 12);
+            this.GradesGrid.MultiSelect = false;
             this.GradesGrid.Name = "GradesGrid";
             this.GradesGrid.ReadOnly = true;
+            this.GradesGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GradesGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GradesGrid.ShowCellErrors = false;
+            this.GradesGrid.ShowCellToolTips = false;
+            this.GradesGrid.ShowEditingIcon = false;
+            this.GradesGrid.ShowRowErrors = false;
             this.GradesGrid.Size = new System.Drawing.Size(505, 380);
             this.GradesGrid.TabIndex = 0;
             // 
@@ -88,6 +96,7 @@
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.GradesGrid);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "DataForm";
             this.Text = "DataForm";
             this.Load += new System.EventHandler(this.DataForm_Load);

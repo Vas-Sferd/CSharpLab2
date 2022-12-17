@@ -1,19 +1,15 @@
 ﻿using CSharpLaba2.DataModel;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CSharpLaba2
 {
     public partial class DataForm : Form
     {
+        private static readonly string[] headers = { "\tКлюч", "\tЛогин", "\tОценка", "\tПредмет", "\tДата" };
         private EditGradeForm editForm = new EditGradeForm();
         private GradeDataContext database;
         private readonly String login;
@@ -27,7 +23,11 @@ namespace CSharpLaba2
         private void DataForm_Load(object sender, EventArgs e)
         {
             database.Grades.Where(g => g.StudentLogin == login).Load();
-            GradesGrid.DataSource = database.Grades.Local;
+            GradesGrid.DataSource = database.Grades.Local.ToBindingList();
+            for (int i = 0; i < GradesGrid.ColumnCount; ++i)
+            {
+                GradesGrid.Columns[i].HeaderText = headers[i];
+            }
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -74,8 +74,9 @@ namespace CSharpLaba2
                 return;
             }
 
-            Grade grade = new Grade(id, login, editForm.SchoolMark, editForm.SchoolSubject, editForm.DateWhenRated);
-            database.Grades.Add(grade);
+            g.SchoolMark = editForm.SchoolMark;
+            g.SchoolSubject = editForm.SchoolSubject;
+            g.DateWhenRated = editForm.DateWhenRated;
             database.SaveChanges();
             GradesGrid.Refresh();
         }

@@ -117,6 +117,7 @@
             this.Controls.Add(this.LoginTextBox);
             this.Controls.Add(this.Login);
             this.Controls.Add(this.Password);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.ResumeLayout(false);
